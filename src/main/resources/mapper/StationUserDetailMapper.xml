@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.StationUserDetailMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.StationUserDetail">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ID" jdbcType="OTHER" property="id" />
+    <result column="EPARCHY_CODE" jdbcType="VARCHAR" property="eparchyCode" />
+    <result column="NET_TYPE_CODE" jdbcType="VARCHAR" property="netTypeCode" />
+    <result column="STATION_ID" jdbcType="VARCHAR" property="stationId" />
+    <result column="STATION_NAME" jdbcType="VARCHAR" property="stationName" />
+    <result column="EPARCHY_NAME" jdbcType="VARCHAR" property="eparchyName" />
+    <result column="CITY_NAME" jdbcType="VARCHAR" property="cityName" />
+    <result column="X" jdbcType="FLOAT" property="x" />
+    <result column="Y" jdbcType="FLOAT" property="y" />
+    <result column="STATE" jdbcType="DECIMAL" property="state" />
+    <result column="STATION_ATTR" jdbcType="VARCHAR" property="stationAttr" />
+    <result column="STATE_MSG" jdbcType="VARCHAR" property="stateMsg" />
+    <result column="USER_CNT" jdbcType="DECIMAL" property="userCnt" />
+    <result column="USER_CNT_ZW" jdbcType="DECIMAL" property="userCntZw" />
+    <result column="USER_CNT_QF" jdbcType="DECIMAL" property="userCntQf" />
+    <result column="USER_CNT_XH" jdbcType="DECIMAL" property="userCntXh" />
+    <result column="CS_VOLUME" jdbcType="VARCHAR" property="csVolume" />
+    <result column="RLC_VOLUME" jdbcType="VARCHAR" property="rlcVolume" />
+    <result column="DATA_TIME" jdbcType="DECIMAL" property="dataTime" />
+  </resultMap>
+</mapper>

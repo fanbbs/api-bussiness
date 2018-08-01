@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.PictureMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.Picture">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="PICTURE_ID" jdbcType="DECIMAL" property="pictureId" />
+    <result column="ADDRESS_ID" jdbcType="DECIMAL" property="addressId" />
+    <result column="PICTURE_NAME" jdbcType="VARCHAR" property="pictureName" />
+    <result column="PICTURE_PATH" jdbcType="VARCHAR" property="picturePath" />
+    <result column="THUMBNAIL_PATH" jdbcType="VARCHAR" property="thumbnailPath" />
+    <result column="NET_PICTURE_PATH" jdbcType="VARCHAR" property="netPicturePath" />
+    <result column="NET_THUMBNAIL_PATH" jdbcType="VARCHAR" property="netThumbnailPath" />
+    <result column="UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="USE_TYPE" jdbcType="VARCHAR" property="useType" />
+    <result column="STATUS" jdbcType="DECIMAL" property="status" />
+  </resultMap>
+</mapper>

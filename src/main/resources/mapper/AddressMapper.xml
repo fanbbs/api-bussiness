@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.AddressMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.Address">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ADDRESS_ID" jdbcType="DECIMAL" property="addressId" />
+    <result column="ADDR_TYPE_CD" jdbcType="DECIMAL" property="addrTypeCd" />
+    <result column="ADDR_STATUS_CD" jdbcType="DECIMAL" property="addrStatusCd" />
+    <result column="GEOGRAPHY_LOC_ID" jdbcType="DECIMAL" property="geographyLocId" />
+    <result column="UP_GEO_LOC_ID" jdbcType="DECIMAL" property="upGeoLocId" />
+    <result column="AREA_ID" jdbcType="DECIMAL" property="areaId" />
+    <result column="SIMPLE_SPELL" jdbcType="VARCHAR" property="simpleSpell" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="DISPLAY_NAME" jdbcType="VARCHAR" property="displayName" />
+    <result column="FULL_NAME" jdbcType="VARCHAR" property="fullName" />
+    <result column="FULL_SIMPLE_SPELL" jdbcType="VARCHAR" property="fullSimpleSpell" />
+    <result column="IS_KEY_NAME" jdbcType="VARCHAR" property="isKeyName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="CREATED_DT" jdbcType="TIMESTAMP" property="createdDt" />
+    <result column="EXP_DT" jdbcType="TIMESTAMP" property="expDt" />
+    <result column="VERSION" jdbcType="TIMESTAMP" property="version" />
+    <result column="STAFF_ID" jdbcType="VARCHAR" property="staffId" />
+    <result column="PUB_DICT_ID" jdbcType="DECIMAL" property="pubDictId" />
+    <result column="PUB_DICT_VALU_ID" jdbcType="DECIMAL" property="pubDictValuId" />
+    <result column="IS_USERADDR" jdbcType="VARCHAR" property="isUseraddr" />
+    <result column="IS_RSC" jdbcType="DECIMAL" property="isRsc" />
+    <result column="DISPLAY_TYPE_CD" jdbcType="DECIMAL" property="displayTypeCd" />
+    <result column="CHOICE_MESSAGE" jdbcType="VARCHAR" property="choiceMessage" />
+    <result column="OLD_ADDRESS_ID" jdbcType="VARCHAR" property="oldAddressId" />
+    <result column="DATA_SOURCE" jdbcType="DECIMAL" property="dataSource" />
+    <result column="WASH_FLAG" jdbcType="DECIMAL" property="washFlag" />
+    <result column="ADDRESS_TYPE" jdbcType="DECIMAL" property="addressType" />
+    <result column="IS_LEAF" jdbcType="DECIMAL" property="isLeaf" />
+  </resultMap>
+
+  <!-- part column result -->
+  <resultMap id="selectPartAddressMap" type="com.company.project.model.Address">
+    <id column="ADDRESS_ID" jdbcType="DECIMAL" property="addressId" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="DISPLAY_NAME" jdbcType="VARCHAR" property="displayName" />
+  </resultMap>
+
+  <!-- 查询语句 -->
+  <select id="selectPartAddress" resultMap="selectPartAddressMap">
+    SELECT ADDRESS_ID, DISPLAY_NAME
+    FROM DJB_ADDRESS
+    WHERE ADDRESS_ID IN (SELECT UP_GEO_LOC_ID
+    FROM DJB_ADDRESS
+    WHERE ADDR_TYPE_CD = 8
+    AND ROWNUM &lt; 20)
+    AND ADDR_TYPE_CD = 6
+  </select>
+
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.AddressStateMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.AddressState">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ADDRESS_ID" jdbcType="DECIMAL" property="addressId" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="ADDRESS_TYPE" jdbcType="VARCHAR" property="addressType" />
+    <result column="PROV" jdbcType="CHAR" property="prov" />
+    <result column="LATN_NAME" jdbcType="VARCHAR" property="latnName" />
+    <result column="LATN_ID" jdbcType="VARCHAR" property="latnId" />
+    <result column="AREA_NAME" jdbcType="VARCHAR" property="areaName" />
+    <result column="AREA_ID" jdbcType="DECIMAL" property="areaId" />
+    <result column="ZONE" jdbcType="VARCHAR" property="zone" />
+    <result column="CELLNUM" jdbcType="DECIMAL" property="cellnum" />
+    <result column="HOUSENUM" jdbcType="DECIMAL" property="housenum" />
+    <result column="MAXFLOOR" jdbcType="DECIMAL" property="maxfloor" />
+    <result column="PLATENUM" jdbcType="DECIMAL" property="platenum" />
+    <result column="DUTY_NAME" jdbcType="VARCHAR" property="dutyName" />
+    <result column="BUREAU_NAME" jdbcType="OTHER" property="bureauName" />
+    <result column="GRID_NAME" jdbcType="CHAR" property="gridName" />
+    <result column="B_DATE" jdbcType="TIMESTAMP" property="bDate" />
+    <result column="FULL_NAME" jdbcType="VARCHAR" property="fullName" />
+    <result column="DUTY_ID" jdbcType="DECIMAL" property="dutyId" />
+    <result column="BUREAU_ID" jdbcType="VARCHAR" property="bureauId" />
+    <result column="GRID_ID" jdbcType="VARCHAR" property="gridId" />
+  </resultMap>
+</mapper>
