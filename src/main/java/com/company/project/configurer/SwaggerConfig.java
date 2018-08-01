@@ -1,4 +1,4 @@
-package com.company.project;
+package com.company.project.configurer;
 
 import com.google.common.collect.Sets;
 import org.springframework.context.annotation.Bean;
