@@ -3,10 +3,11 @@ package com.company.project.model;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "DJB_ADDRESS")
-//@Table(name = "ADDRESS")
+//@Table(name = "DJB_ADDRESS")
+@Table(name = "ADDRESS")
 public class Address {
-    @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "select SEQ_ADDRESS.nextval from dual")
+//    @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "select SEQ_ADDRESS.nextval from dual")
+    @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "select nextval('SEQ_ADDRESS')")
     @Id
     @Column(name = "ADDRESS_ID")
     private Integer addressId;
