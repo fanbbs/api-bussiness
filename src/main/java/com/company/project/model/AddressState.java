@@ -51,7 +51,7 @@ public class AddressState {
     private String dutyName;
 
     @Column(name = "BUREAU_NAME")
-    private Object bureauName;
+    private String bureauName;
 
     @Column(name = "GRID_NAME")
     private String gridName;
@@ -270,14 +270,14 @@ public class AddressState {
     /**
      * @return BUREAU_NAME
      */
-    public Object getBureauName() {
+    public String getBureauName() {
         return bureauName;
     }
 
     /**
      * @param bureauName
      */
-    public void setBureauName(Object bureauName) {
+    public void setBureauName(String bureauName) {
         this.bureauName = bureauName;
     }
 
