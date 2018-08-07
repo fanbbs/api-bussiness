@@ -18,6 +18,7 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import org.gds.offset.CoordOffset;
 
@@ -145,14 +146,16 @@ public class AddressController {
 
     @ApiIgnore
     private Map jiupianSingle(double x, double y) {
-        String packFile = "D:\\app\\app\\locallib\\packfile.dat";
-        packFile = packFile.replace("\\\\", "/");
-
+        String packFile;
         try {
-            CoordOffset coord = CoordOffset.getInstance(
-//                    "/home/elkstack/app/springboot/locallib/packfile.dat", false);
-//                    "/app/webapp/workorder/src/gisapi/lib/packfile.dat", false);
-                    packFile, false);
+            if (isOSLinux()) {
+//                packFile = "/home/elkstack/app/springboot/locallib/packfile.dat";
+                packFile = "/opt/lib/packfile.dat";
+            }else {
+                packFile = "D:\\app\\app\\locallib\\packfile.dat";
+                packFile = packFile.replace("\\\\", "/");
+            }
+            CoordOffset coord = CoordOffset.getInstance(packFile, false);
 
             double[] outXY = new double[2];
             coord.offsetCoord(x, y, outXY);
@@ -165,6 +168,17 @@ public class AddressController {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public static boolean isOSLinux() {
+        Properties prop = System.getProperties();
+
+        String os = prop.getProperty("os.name");
+        if (os != null && os.toLowerCase().indexOf("linux") > -1) {
+            return true;
+        } else {
+            return false;
         }
     }
 
