@@ -142,6 +142,7 @@ public class AddressController {
     public Result jiupian(@RequestParam(defaultValue = "0") double x, @RequestParam(defaultValue = "0") double y){
         Map result = jiupianSingle(x,y);
         return ResultGenerator.genSuccessResult(result);
+
     }
 
     @ApiIgnore
