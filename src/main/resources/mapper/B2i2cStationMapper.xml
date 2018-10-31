@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.B2i2cStationMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.B2i2cStation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="OBJECTID" jdbcType="INTEGER" property="objectid" />
+    <result column="MONTH_ID" jdbcType="INTEGER" property="monthId" />
+    <result column="DATA_TIME" jdbcType="INTEGER" property="dataTime" />
+    <result column="EPARCHY_NAME" jdbcType="VARCHAR" property="eparchyName" />
+    <result column="CITY_NAME" jdbcType="VARCHAR" property="cityName" />
+    <result column="TOWNS_NAME" jdbcType="VARCHAR" property="townsName" />
+    <result column="STATION_ATTR" jdbcType="VARCHAR" property="stationAttr" />
+    <result column="STATION_ID" jdbcType="VARCHAR" property="stationId" />
+    <result column="STATION_NAME" jdbcType="VARCHAR" property="stationName" />
+    <result column="NET_TYPE_CODE" jdbcType="VARCHAR" property="netTypeCode" />
+    <result column="STATE" jdbcType="INTEGER" property="state" />
+    <result column="USER_CNT" jdbcType="INTEGER" property="userCnt" />
+    <result column="USER_CNT_ZW" jdbcType="INTEGER" property="userCntZw" />
+    <result column="USER_CNT_QF" jdbcType="INTEGER" property="userCntQf" />
+    <result column="USER_CNT_XH" jdbcType="INTEGER" property="userCntXh" />
+    <result column="ADDR_INFO" jdbcType="VARCHAR" property="addrInfo" />
+    <result column="STATE_MSG" jdbcType="VARCHAR" property="stateMsg" />
+    <result column="DISCNT_CODE" jdbcType="VARCHAR" property="discntCode" />
+    <result column="DISCNT_NAME" jdbcType="VARCHAR" property="discntName" />
+    <result column="EPARCHY_CODE" jdbcType="VARCHAR" property="eparchyCode" />
+    <result column="CITY_CODE" jdbcType="VARCHAR" property="cityCode" />
+    <result column="TOWNS_CODE" jdbcType="VARCHAR" property="townsCode" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="CS_VOLUME" jdbcType="VARCHAR" property="csVolume" />
+    <result column="RLC_VOLUME" jdbcType="VARCHAR" property="rlcVolume" />
+    <result column="NEW_BUILD_STATION" jdbcType="VARCHAR" property="newBuildStation" />
+    <result column="x" jdbcType="DOUBLE" property="x" />
+    <result column="y" jdbcType="DOUBLE" property="y" />
+  </resultMap>
+</mapper>
