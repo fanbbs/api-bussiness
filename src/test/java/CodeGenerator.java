@@ -23,7 +23,8 @@ public class CodeGenerator {
 //    private static final String JDBC_PASSWORD = "123456";
 //    private static final String JDBC_DIVER_CLASS_NAME = "oracle.jdbc.OracleDriver";
 
-    private static final String JDBC_URL = "jdbc:postgresql://192.168.147.132:5432/postgres";
+//    private static final String JDBC_URL = "jdbc:postgresql://192.168.147.132:5432/postgres";
+    private static final String JDBC_URL = "jdbc:postgresql://133.224.217.121:5432/gishlj";
     private static final String JDBC_USERNAME = "postgres";
     private static final String JDBC_PASSWORD = "postgres";
     private static final String JDBC_DIVER_CLASS_NAME = "org.postgresql.Driver";
@@ -43,7 +44,7 @@ public class CodeGenerator {
     private static final String DATE = new SimpleDateFormat("yyyy/MM/dd").format(new Date());//@date
 
     public static void main(String[] args) {
-        genCode("wy_district_info");
+        genCode("t_2i2c_station");
         //genCodeByCustomModelName("输入表名","输入自定义Model名称");
     }
 
@@ -54,7 +55,7 @@ public class CodeGenerator {
      */
     public static void genCode(String... tableNames) {
         for (String tableName : tableNames) {
-            genCodeByCustomModelName(tableName, "District");
+                genCodeByCustomModelName(tableName, "B2i2cStation");
         }
     }
 

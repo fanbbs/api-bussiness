@@ -10,16 +10,16 @@ public class Picture {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "select SEQ_PICTURE.nextval from dual")
     @Id
-    @Column(name = "PICTURE_ID")
+    @Column(name = "\"PICTURE_ID\"")
     private Integer pictureId;
 
-    @Column(name = "ADDRESS_ID")
+    @Column(name = "\"ADDRESS_ID\"")
     private Integer addressId;
 
 //    @Column(name = "PICTURE_NAME")
 //    private String pictureName;
 
-    @Column(name = "PICTURE_PATH")
+    @Column(name = "\"PICTURE_PATH\"")
     private String picturePath;
 
 //    @Column(name = "THUMBNAIL_PATH")
@@ -34,7 +34,7 @@ public class Picture {
 //    @Column(name = "UPDATE_DATE")
 //    private Date updateDate;
 
-    @Column(name = "USE_TYPE")
+    @Column(name = "\"USE_TYPE\"")
     private String useType;
 
 //    @Column(name = "STATUS")

@@ -8,67 +8,67 @@ import javax.persistence.*;
 public class AddressState {
 
     @Id
-    @Column(name = "ADDRESS_ID")
+    @Column(name = "\"ADDRESS_ID\"")
     private Integer addressId;
 
-    @Column(name = "NAME")
+    @Column(name = "\"NAME\"")
     private String name;
 
-    @Column(name = "ADDRESS_TYPE")
+    @Column(name = "\"ADDRESS_TYPE\"")
     private String addressType;
 
-    @Column(name = "PROV")
+    @Column(name = "\"PROV\"")
     private String prov;
 
-    @Column(name = "LATN_NAME")
+    @Column(name = "\"LATN_NAME\"")
     private String latnName;
 
-    @Column(name = "LATN_ID")
+    @Column(name = "\"LATN_ID\"")
     private String latnId;
 
-    @Column(name = "AREA_NAME")
+    @Column(name = "\"AREA_NAME\"")
     private String areaName;
 
-    @Column(name = "AREA_ID")
+    @Column(name = "\"AREA_ID\"")
     private BigDecimal areaId;
 
-    @Column(name = "ZONE")
+    @Column(name = "\"ZONE\"")
     private String zone;
 
-    @Column(name = "CELLNUM")
+    @Column(name = "\"CELLNUM\"")
     private BigDecimal cellnum;
 
-    @Column(name = "HOUSENUM")
+    @Column(name = "\"HOUSENUM\"")
     private BigDecimal housenum;
 
-    @Column(name = "MAXFLOOR")
+    @Column(name = "\"MAXFLOOR\"")
     private BigDecimal maxfloor;
 
-    @Column(name = "PLATENUM")
+    @Column(name = "\"PLATENUM\"")
     private BigDecimal platenum;
 
-    @Column(name = "DUTY_NAME")
+    @Column(name = "\"DUTY_NAME\"")
     private String dutyName;
 
-    @Column(name = "BUREAU_NAME")
+    @Column(name = "\"BUREAU_NAME\"")
     private String bureauName;
 
-    @Column(name = "GRID_NAME")
+    @Column(name = "\"GRID_NAME\"")
     private String gridName;
 
-    @Column(name = "B_DATE")
+    @Column(name = "\"B_DATE\"")
     private Date bDate;
 
-    @Column(name = "FULL_NAME")
+    @Column(name = "\"FULL_NAME\"")
     private String fullName;
 
-    @Column(name = "DUTY_ID")
+    @Column(name = "\"DUTY_ID\"")
     private BigDecimal dutyId;
 
-    @Column(name = "BUREAU_ID")
+    @Column(name = "\"BUREAU_ID\"")
     private String bureauId;
 
-    @Column(name = "GRID_ID")
+    @Column(name = "\"GRID_ID\"")
     private String gridId;
 
     /**

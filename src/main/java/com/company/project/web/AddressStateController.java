@@ -85,9 +85,9 @@ public class AddressStateController {
     public Result findOneStatByIds(@PathVariable String addrids) {
         Condition statCondition = new Condition(AddressState.class);
         statCondition.createCriteria().andCondition(
-                " ADDRESS_ID IN ( " + addrids + " )\n"
+                " \"ADDRESS_ID\" IN ( " + addrids + " )\n"
         );
-        statCondition.setOrderByClause("ADDRESS_ID desc");
+        statCondition.setOrderByClause("\"ADDRESS_ID\" desc");
         List<AddressState> list = addressStateService.findByCondition(statCondition);
         return ResultGenerator.genSuccessResult(list.get(0));
     }

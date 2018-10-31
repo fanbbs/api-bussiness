@@ -76,8 +76,8 @@ public class PictureController {
     public Result findByAddressID(@PathVariable Integer addrid) {
         Condition condition = new Condition(Picture.class);
         condition.createCriteria().andCondition(
-                "ADDRESS_ID = " + addrid );
-        condition.setOrderByClause("ADDRESS_ID desc");
+                "\"ADDRESS_ID\" = " + addrid );
+        condition.setOrderByClause("\"ADDRESS_ID\" desc");
         List<Picture> list = pictureService.findByCondition(condition);
         return ResultGenerator.genSuccessResult(list);
     }
@@ -88,8 +88,8 @@ public class PictureController {
     public Result findByAddressIDs(@PathVariable String addrids) {
         Condition condition = new Condition(Picture.class);
         condition.createCriteria().andCondition(
-                "ADDRESS_ID in ( " + addrids + " )");
-        condition.setOrderByClause("ADDRESS_ID desc");
+                "\"ADDRESS_ID\" in ( " + addrids + " )");
+        condition.setOrderByClause("\"ADDRESS_ID\" desc");
         List<Picture> list = pictureService.findByCondition(condition);
         return ResultGenerator.genSuccessResult(list);
     }

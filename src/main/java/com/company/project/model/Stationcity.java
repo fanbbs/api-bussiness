@@ -6,40 +6,40 @@ import javax.persistence.*;
 @Table(name = "T_2I2C_STAFF_CITY")
 public class Stationcity {
     @Id
-    @Column(name = "PARENT_CITY_CODE")
+    @Column(name = "\"PARENT_CITY_CODE\"")
     private String parentCityCode;
 
-    @Column(name = "CITY_CODE")
+    @Column(name = "\"CITY_CODE\"")
     private String cityCode;
 
-    @Column(name = "STATION_CNT")
+    @Column(name = "\"STATION_CNT\"")
     private Integer stationCnt;
 
-    @Column(name = "USER_CNT")
+    @Column(name = "\"USER_CNT\"")
     private Integer userCnt;
 
-    @Column(name = "STATION_CNT_NOT_2I2C")
+    @Column(name = "\"STATION_CNT_NOT_2I2C\"")
     private Integer stationCntNot2i2c;
 
-    @Column(name = "STATION_CNT_FREE")
+    @Column(name = "\"STATION_CNT_FREE\"")
     private Integer stationCntFree;
 
-    @Column(name = "STATION_CNT_NORMAL")
+    @Column(name = "\"STATION_CNT_NORMAL\"")
     private Integer stationCntNormal;
 
-    @Column(name = "USER_CNT_QF")
+    @Column(name = "\"USER_CNT_QF\"")
     private Integer userCntQf;
 
-    @Column(name = "USER_CNT_XH")
+    @Column(name = "\"USER_CNT_XH\"")
     private Integer userCntXh;
 
-    @Column(name = "CITY_LEVEL")
+    @Column(name = "\"CITY_LEVEL\"")
     private Short cityLevel;
 
-    @Column(name = "UPDATE_TIME")
+    @Column(name = "\"UPDATE_TIME\"")
     private Date updateTime;
 
-    @Column(name = "DATA_TIME")
+    @Column(name = "\"DATA_TIME\"")
     private Integer dataTime;
 
     /**

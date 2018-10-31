@@ -75,7 +75,7 @@ public class DistrictController {
     public Result findByAddressID(@PathVariable String latnid) {
         Condition condition = new Condition(District.class);
         condition.createCriteria().andCondition(
-                "EPARCHY_CODE = " + latnid );
+                "\"EPARCHY_CODE\" = " + latnid );
         List<District> list = districtService.findByCondition(condition);
         return ResultGenerator.genSuccessResult(list);
     }

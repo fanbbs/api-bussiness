@@ -82,15 +82,15 @@ public class AddressController {
     public Result findChildrensByAddressID(@PathVariable Integer addrid) {
         Condition condition = new Condition(Address.class);
         condition.createCriteria().andCondition(
-                "ADDRESS_ID IN (\n" +
-                            " with recursive t_result as ( " +
-                            " select * from address where address_id= " + addrid + "\n" +
-                            " union all " +
-                            " select t2.* from t_result t1 join address t2 on t1.address_id=t2.up_geo_loc_id " +
-                            " ) " +
-                            " select address_id from t_result " +
-                        " ) and addr_status_cd <> 2 " );
-        condition.setOrderByClause("addr_type_cd,name desc");
+                "\"ADDRESS_ID\" IN (\n" +
+                        " WITH RECURSIVE T_RESULT AS ( " +
+                        " SELECT * FROM ADDRESS WHERE \"ADDRESS_ID\"= " + addrid + "\n" +
+                        " UNION ALL " +
+                        " SELECT T2.* FROM T_RESULT T1 JOIN ADDRESS T2 ON T1.\"ADDRESS_ID\"=T2.\"UP_GEO_LOC_ID\" " +
+                        " ) " +
+                        " SELECT \"ADDRESS_ID\" FROM T_RESULT " +
+                        " ) AND \"ADDR_STATUS_CD\" <> 2 " );
+        condition.setOrderByClause("\"ADDR_TYPE_CD\",\"NAME\" desc");
         List<Address> list = addressService.findByCondition(condition);
         return ResultGenerator.genSuccessResult(list);
     }
@@ -101,14 +101,14 @@ public class AddressController {
     public Result findNearbyCommunity(@PathVariable String addrids) {
         Condition communityCondition = new Condition(Address.class);
         communityCondition.createCriteria().andCondition(
-                "ADDRESS_ID IN (SELECT UP_GEO_LOC_ID\n" +
+                "\"ADDRESS_ID\" IN (SELECT \"UP_GEO_LOC_ID\"\n" +
                         "                        FROM ADDRESS\n" +
-                        "                       WHERE ADDR_TYPE_CD = 8\n" +
-                        "                               and addr_status_cd <> 2\n" +
-                        "                               and ADDRESS_ID in ( " + addrids + " ))\n" +
-                                "   and addr_status_cd <> 2\n" +
-        "   AND ADDR_TYPE_CD = 6" );
-        communityCondition.setOrderByClause("ADDRESS_ID desc");
+                        "                       WHERE \"ADDR_TYPE_CD\" = 8\n" +
+                        "                               AND \"ADDR_STATUS_CD\" <> 2\n" +
+                        "                               AND \"ADDRESS_ID\" IN ( " + addrids + " ))\n" +
+                        "   AND \"ADDR_STATUS_CD\" <> 2\n" +
+                        "   AND \"ADDR_TYPE_CD\" = 6" );
+        communityCondition.setOrderByClause("\"ADDRESS_ID\" desc");
         List<Address> list = addressService.findByCondition(communityCondition);
         return ResultGenerator.genSuccessResult(list);
     }
@@ -119,18 +119,18 @@ public class AddressController {
     public Result findNearbyStreet(@PathVariable String addrids) {
         Condition communityCondition = new Condition(Address.class);
         communityCondition.createCriteria().andCondition(
-                "address_id in\n" +
-                        "       (select up_geo_loc_id\n" +
-                        "          from address\n" +
-                        "         where address_id in (select up_geo_loc_id\n" +
-                        "                                from address\n" +
-                        "                               where addr_type_cd = 8\n" +
-                        "                               and ADDRESS_ID in ( " + addrids + " ))\n" +
-                        "           and addr_status_cd = 1\n" +
-                        "           and addr_type_cd = 6)\n" +
-                        "   and addr_status_cd = 1\n" +
-                        "   and addr_type_cd = 5" );
-        communityCondition.setOrderByClause("ADDRESS_ID desc");
+                "\"ADDRESS_ID\" IN\n" +
+                        "       (SELECT \"UP_GEO_LOC_ID\"\n" +
+                        "          FROM ADDRESS\n" +
+                        "         WHERE \"ADDRESS_ID\" IN (SELECT \"UP_GEO_LOC_ID\"\n" +
+                        "                                FROM ADDRESS\n" +
+                        "                               WHERE \"ADDR_TYPE_CD\" = 8\n" +
+                        "                               AND \"ADDRESS_ID\" IN ( " + addrids + " ))\n" +
+                        "           AND \"ADDR_STATUS_CD\" = 1\n" +
+                        "           AND \"ADDR_TYPE_CD\" = 6)\n" +
+                        "   AND \"ADDR_STATUS_CD\" = 1\n" +
+                        "   AND \"ADDR_TYPE_CD\" = 5" );
+        communityCondition.setOrderByClause("\"ADDRESS_ID\" desc");
         List<Address> list = addressService.findByCondition(communityCondition);
         return ResultGenerator.genSuccessResult(list);
     }
@@ -151,7 +151,8 @@ public class AddressController {
         try {
             if (isOSLinux()) {
 //                packFile = "/home/elkstack/app/springboot/locallib/packfile.dat";
-                packFile = "/opt/lib/packfile.dat";
+//                packFile = "/opt/lib/packfile.dat";
+                packFile = "/app/webapp/workorder/src/gisapinew/packfile.dat";
             }else {
                 packFile = "D:\\app\\app\\locallib\\packfile.dat";
                 packFile = packFile.replace("\\\\", "/");

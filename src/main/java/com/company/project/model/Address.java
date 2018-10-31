@@ -9,88 +9,88 @@ public class Address {
 //    @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "select SEQ_ADDRESS.nextval from dual")
     @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "select nextval('SEQ_ADDRESS')")
     @Id
-    @Column(name = "ADDRESS_ID")
+    @Column(name = "\"ADDRESS_ID\"")
     private Integer addressId;
 
-    @Column(name = "ADDR_TYPE_CD")
+    @Column(name = "\"ADDR_TYPE_CD\"")
     private Integer addrTypeCd;
 
-    @Column(name = "ADDR_STATUS_CD")
+    @Column(name = "\"ADDR_STATUS_CD\"")
     private Integer addrStatusCd;
 
-    @Column(name = "GEOGRAPHY_LOC_ID")
+    @Column(name = "\"GEOGRAPHY_LOC_ID\"")
     private Long geographyLocId;
 
-    @Column(name = "UP_GEO_LOC_ID")
+    @Column(name = "\"UP_GEO_LOC_ID\"")
     private Long upGeoLocId;
 
-    @Column(name = "AREA_ID")
+    @Column(name = "\"AREA_ID\"")
     private Integer areaId;
 
-    @Column(name = "SIMPLE_SPELL")
+    @Column(name = "\"SIMPLE_SPELL\"")
     private String simpleSpell;
 
-    @Column(name = "NAME")
+    @Column(name = "\"NAME\"")
     private String name;
 
-    @Column(name = "DISPLAY_NAME")
+    @Column(name = "\"DISPLAY_NAME\"")
     private String displayName;
 
-    @Column(name = "FULL_NAME")
+    @Column(name = "\"FULL_NAME\"")
     private String fullName;
 
-    @Column(name = "FULL_SIMPLE_SPELL")
+    @Column(name = "\"FULL_SIMPLE_SPELL\"")
     private String fullSimpleSpell;
 
-    @Column(name = "IS_KEY_NAME")
+    @Column(name = "\"IS_KEY_NAME\"")
     private String isKeyName;
 
-    @Column(name = "DESCRIPTION")
+    @Column(name = "\"DESCRIPTION\"")
     private String description;
 
-    @Column(name = "CREATED_DT")
+    @Column(name = "\"CREATED_DT\"")
     private Date createdDt;
 
-    @Column(name = "EXP_DT")
+    @Column(name = "\"EXP_DT\"")
     private Date expDt;
 
-    @Column(name = "VERSION")
+    @Column(name = "\"VERSION\"")
     private Date version;
 
-    @Column(name = "STAFF_ID")
+    @Column(name = "\"STAFF_ID\"")
     private String staffId;
 
-    @Column(name = "PUB_DICT_ID")
+    @Column(name = "\"PUB_DICT_ID\"")
     private Long pubDictId;
 
-    @Column(name = "PUB_DICT_VALU_ID")
+    @Column(name = "\"PUB_DICT_VALU_ID\"")
     private Short pubDictValuId;
 
-    @Column(name = "IS_USERADDR")
+    @Column(name = "\"IS_USERADDR\"")
     private String isUseraddr;
 
-    @Column(name = "IS_RSC")
+    @Column(name = "\"IS_RSC\"")
     private Short isRsc;
 
-    @Column(name = "DISPLAY_TYPE_CD")
+    @Column(name = "\"DISPLAY_TYPE_CD\"")
     private Integer displayTypeCd;
 
-    @Column(name = "CHOICE_MESSAGE")
+    @Column(name = "\"CHOICE_MESSAGE\"")
     private String choiceMessage;
 
-    @Column(name = "OLD_ADDRESS_ID")
+    @Column(name = "\"OLD_ADDRESS_ID\"")
     private String oldAddressId;
 
-    @Column(name = "DATA_SOURCE")
+    @Column(name = "\"DATA_SOURCE\"")
     private Integer dataSource;
 
-    @Column(name = "WASH_FLAG")
+    @Column(name = "\"WASH_FLAG\"")
     private Integer washFlag;
 
-    @Column(name = "ADDRESS_TYPE")
+    @Column(name = "\"ADDRESS_TYPE\"")
     private Integer addressType;
 
-    @Column(name = "IS_LEAF")
+    @Column(name = "\"IS_LEAF\"")
     private Short isLeaf;
 
     /**

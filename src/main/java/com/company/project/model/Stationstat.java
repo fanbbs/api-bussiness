@@ -5,26 +5,26 @@ import javax.persistence.*;
 
 @Table(name = "T_2I2C_EPARCHY_USER_STAION")
 public class Stationstat {
-    @Column(name = "DATA_TIME")
+    @Column(name = "\"DATA_TIME\"")
     private Integer dataTime;
 
     @Id
-    @Column(name = "EPARCHY_CODE")
+    @Column(name = "\"EPARCHY_CODE\"")
     private String eparchyCode;
 
-    @Column(name = "EPARCHY_NAME")
+    @Column(name = "\"EPARCHY_NAME\"")
     private String eparchyName;
 
-    @Column(name = "STATION_CNT_4G")
+    @Column(name = "\"STATION_CNT_4G\"")
     private String stationCnt4g;
 
-    @Column(name = "USER_CNT")
+    @Column(name = "\"USER_CNT\"")
     private String userCnt;
 
-    @Column(name = "USER_CNT_2I2C")
+    @Column(name = "\"USER_CNT_2I2C\"")
     private String userCnt2i2c;
 
-    @Column(name = "UPDATE_TIME")
+    @Column(name = "\"UPDATE_TIME\"")
     private Date updateTime;
 
     /**

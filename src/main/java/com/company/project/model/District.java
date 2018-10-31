@@ -3,40 +3,40 @@ package com.company.project.model;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "wy_district_info")
+@Table(name = "\"wy_district_info\"")
 public class District {
     @Id
-    @Column(name = "district_id")
+    @Column(name = "\"DISTRICT_ID\"")
     private Integer districtId;
 
-    @Column(name = "city_id")
+    @Column(name = "\"CITY_ID\"")
     private String cityId;
 
-    @Column(name = "district_name")
+    @Column(name = "\"DISTRICT_NAME\"")
     private String districtName;
 
-    @Column(name = "create_staff_id")
+    @Column(name = "\"CREATE_STAFF_ID\"")
     private String createStaffId;
 
-    @Column(name = "create_date")
+    @Column(name = "\"CREATE_DATE\"")
     private Date createDate;
 
-    @Column(name = "update_staff_id")
+    @Column(name = "\"UPDATE_STAFF_ID\"")
     private String updateStaffId;
 
-    @Column(name = "update_date")
+    @Column(name = "\"UPDATE_DATE\"")
     private Date updateDate;
 
-    @Column(name = "eparchy_code")
+    @Column(name = "\"EPARCHY_CODE\"")
     private String eparchyCode;
 
-    @Column(name = "city_code")
+    @Column(name = "\"CITY_CODE\"")
     private String cityCode;
 
-    @Column(name = "city_name")
+    @Column(name = "\"CITY_NAME\"")
     private String cityName;
 
-    @Column(name = "city_or_notcity")
+    @Column(name = "\"CITY_OR_NOTCITY\"")
     private String cityOrNotcity;
 
     /**

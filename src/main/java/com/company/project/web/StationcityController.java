@@ -76,10 +76,10 @@ public class StationcityController {
 
         Condition condition = new Condition(Stationcity.class);
         condition.createCriteria().andCondition(
-                "data_time = " + data_time + "\n" +
-                        "and parent_city_code = " + parent_city_code
+                "\"DATA_TIME\" = " + data_time + "\n" +
+                        "and \"PARENT_CITY_CODE\" = " + parent_city_code
         );
-        condition.setOrderByClause("city_code asc");
+        condition.setOrderByClause("\"CITY_CODE\" asc");
         List<Stationcity> list = stationcityService.findByCondition(condition);
         return ResultGenerator.genSuccessResult(list);
     }
