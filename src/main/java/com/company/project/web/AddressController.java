@@ -150,12 +150,8 @@ public class AddressController {
     private String packFile;
     @ApiIgnore
     private Map jiupianSingle(double x, double y) {
-//        String packFile;
         try {
             if (isOSLinux()) {
-//                packFile = "/home/elkstack/app/springboot/locallib/packfile.dat";
-//                packFile = "/opt/lib/packfile.dat";
-//                packFile = "/app/webapp/workorder/src/gisapinew/packfile.dat";
 //                packFile = "/root/locallib/packfile.dat";
             }else {
                 packFile = "D:\\app\\app\\locallib\\packfile.dat";
