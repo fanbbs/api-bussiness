@@ -3,6 +3,7 @@ package com.company.project.web;
 import com.company.project.core.Result;
 import com.company.project.core.ResultGenerator;
 import com.company.project.model.Address;
+import com.company.project.model.Appparam;
 import com.company.project.service.AddressService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -10,6 +11,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 import tk.mybatis.mapper.entity.Condition;
@@ -145,14 +147,18 @@ public class AddressController {
 
     }
 
+    @Autowired
+    private Appparam appparam;
     @ApiIgnore
     private Map jiupianSingle(double x, double y) {
         String packFile;
+
         try {
             if (isOSLinux()) {
 //                packFile = "/home/elkstack/app/springboot/locallib/packfile.dat";
 //                packFile = "/opt/lib/packfile.dat";
-                packFile = "/app/webapp/workorder/src/gisapinew/packfile.dat";
+//                packFile = "/app/webapp/workorder/src/gisapinew/packfile.dat";
+                packFile = appparam.getCoordoffsetPackfilePath();
             }else {
                 packFile = "D:\\app\\app\\locallib\\packfile.dat";
                 packFile = packFile.replace("\\\\", "/");
