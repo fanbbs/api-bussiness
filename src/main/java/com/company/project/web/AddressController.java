@@ -147,7 +147,7 @@ public class AddressController {
 
     }
 
-    @Autowired
+    @Resource
     private Appparam appparam;
     @ApiIgnore
     private Map jiupianSingle(double x, double y) {
