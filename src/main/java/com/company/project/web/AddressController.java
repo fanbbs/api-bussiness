@@ -3,7 +3,6 @@ package com.company.project.web;
 import com.company.project.core.Result;
 import com.company.project.core.ResultGenerator;
 import com.company.project.model.Address;
-import com.company.project.model.Appparam;
 import com.company.project.service.AddressService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -11,7 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 import tk.mybatis.mapper.entity.Condition;
@@ -147,19 +146,17 @@ public class AddressController {
 
     }
 
-    @Resource
-    private Appparam appparam;
+    @Value("${appparam.coordoffsetpackfilepath}")
+    private String packFile;
     @ApiIgnore
     private Map jiupianSingle(double x, double y) {
-        String packFile;
-
+//        String packFile;
         try {
             if (isOSLinux()) {
 //                packFile = "/home/elkstack/app/springboot/locallib/packfile.dat";
 //                packFile = "/opt/lib/packfile.dat";
 //                packFile = "/app/webapp/workorder/src/gisapinew/packfile.dat";
-//                packFile = appparam.getCoordoffsetPackfilePath();
-                packFile = "/root/locallib/packfile.dat";
+//                packFile = "/root/locallib/packfile.dat";
             }else {
                 packFile = "D:\\app\\app\\locallib\\packfile.dat";
                 packFile = packFile.replace("\\\\", "/");
