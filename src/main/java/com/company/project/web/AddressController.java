@@ -158,7 +158,8 @@ public class AddressController {
 //                packFile = "/home/elkstack/app/springboot/locallib/packfile.dat";
 //                packFile = "/opt/lib/packfile.dat";
 //                packFile = "/app/webapp/workorder/src/gisapinew/packfile.dat";
-                packFile = appparam.getCoordoffsetPackfilePath();
+//                packFile = appparam.getCoordoffsetPackfilePath();
+                packFile = "/root/locallib/packfile.dat";
             }else {
                 packFile = "D:\\app\\app\\locallib\\packfile.dat";
                 packFile = packFile.replace("\\\\", "/");
