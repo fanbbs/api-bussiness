@@ -6,6 +6,10 @@ package com.company.project.core;
 public class ResultGenerator {
     private static final String DEFAULT_SUCCESS_MESSAGE = "SUCCESS";
 
+    private ResultGenerator() {
+
+    }
+
     public static Result genSuccessResult() {
         return new Result()
                 .setCode(ResultCode.SUCCESS)

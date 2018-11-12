@@ -4,6 +4,10 @@ package com.company.project.core;
  * 项目常量
  */
 public final class ProjectConstant {
+    private ProjectConstant() {
+
+    }
+
     public static final String BASE_PACKAGE = "com.company.project";//项目基础包名称，根据自己公司的项目修改
 
     public static final String MODEL_PACKAGE = BASE_PACKAGE + ".model";//Model所在包

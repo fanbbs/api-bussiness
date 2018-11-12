@@ -1,6 +1,5 @@
 package com.company.project.model;
 
-import java.util.Date;
 import javax.persistence.*;
 
 public class Picture {
@@ -16,29 +15,11 @@ public class Picture {
     @Column(name = "\"ADDRESS_ID\"")
     private Integer addressId;
 
-//    @Column(name = "PICTURE_NAME")
-//    private String pictureName;
-
     @Column(name = "\"PICTURE_PATH\"")
     private String picturePath;
 
-//    @Column(name = "THUMBNAIL_PATH")
-//    private String thumbnailPath;
-//
-//    @Column(name = "NET_PICTURE_PATH")
-//    private String netPicturePath;
-//
-//    @Column(name = "NET_THUMBNAIL_PATH")
-//    private String netThumbnailPath;
-//
-//    @Column(name = "UPDATE_DATE")
-//    private Date updateDate;
-
     @Column(name = "\"USE_TYPE\"")
     private String useType;
-
-//    @Column(name = "STATUS")
-//    private Short status;
 
     /**
      * @return PICTURE_ID
@@ -68,20 +49,6 @@ public class Picture {
         this.addressId = addressId;
     }
 
-//    /**
-//     * @return PICTURE_NAME
-//     */
-//    public String getPictureName() {
-//        return pictureName;
-//    }
-//
-//    /**
-//     * @param pictureName
-//     */
-//    public void setPictureName(String pictureName) {
-//        this.pictureName = pictureName;
-//    }
-
     /**
      * @return PICTURE_PATH
      */
@@ -95,62 +62,6 @@ public class Picture {
     public void setPicturePath(String picturePath) {
         this.picturePath = picturePath;
     }
-
-//    /**
-//     * @return THUMBNAIL_PATH
-//     */
-//    public String getThumbnailPath() {
-//        return thumbnailPath;
-//    }
-//
-//    /**
-//     * @param thumbnailPath
-//     */
-//    public void setThumbnailPath(String thumbnailPath) {
-//        this.thumbnailPath = thumbnailPath;
-//    }
-//
-//    /**
-//     * @return NET_PICTURE_PATH
-//     */
-//    public String getNetPicturePath() {
-//        return netPicturePath;
-//    }
-//
-//    /**
-//     * @param netPicturePath
-//     */
-//    public void setNetPicturePath(String netPicturePath) {
-//        this.netPicturePath = netPicturePath;
-//    }
-//
-//    /**
-//     * @return NET_THUMBNAIL_PATH
-//     */
-//    public String getNetThumbnailPath() {
-//        return netThumbnailPath;
-//    }
-//
-//    /**
-//     * @param netThumbnailPath
-//     */
-//    public void setNetThumbnailPath(String netThumbnailPath) {
-//        this.netThumbnailPath = netThumbnailPath;
-//    }
-//
-//    /**
-//     * @return UPDATE_DATE
-//     */
-//    public Date getUpdateDate() {
-//        return updateDate;
-//    }
-//
-//    /**
-//     * @param updateDate
-//     */
-//    public void setUpdateDate(Date updateDate) {
-//        this.updateDate = updateDate;
-//    }
 
     /**
      * @return USE_TYPE
@@ -166,17 +77,4 @@ public class Picture {
         this.useType = useType;
     }
 
-//    /**
-//     * @return STATUS
-//     */
-//    public Short getStatus() {
-//        return status;
-//    }
-//
-//    /**
-//     * @param status
-//     */
-//    public void setStatus(Short status) {
-//        this.status = status;
-//    }
 }

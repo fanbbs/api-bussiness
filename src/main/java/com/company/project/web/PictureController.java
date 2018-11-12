@@ -25,7 +25,6 @@ import java.util.List;
 public class PictureController {
     @Resource
     private PictureService pictureService;
-    private Condition condition;
 
     @PostMapping
     @ApiOperation(value="增加地址图片", notes="增加地址图片")

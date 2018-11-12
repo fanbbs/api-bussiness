@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 import tk.mybatis.mapper.entity.Condition;
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
-
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -72,12 +69,12 @@ public class StationcityController {
     @ApiOperation(value="按照日期，区域查找统计信息")
     @ApiImplicitParams({@ApiImplicitParam(name = "data_time", value = "日期", dataType = "String"),
             @ApiImplicitParam(name = "parent_city_code", value = "区域标识", dataType = "String")})
-    public Result listBydate(@RequestParam(defaultValue = "20180408") Integer data_time, @RequestParam(defaultValue = "'0097'") String parent_city_code){
+    public Result listBydate(@RequestParam(defaultValue = "20180408") Integer dataTime, @RequestParam(defaultValue = "'0097'") String parentCityCode){
 
         Condition condition = new Condition(Stationcity.class);
         condition.createCriteria().andCondition(
-                "\"DATA_TIME\" = " + data_time + "\n" +
-                        "and \"PARENT_CITY_CODE\" = " + parent_city_code
+                "\"DATA_TIME\" = " + dataTime + "\n" +
+                        "and \"PARENT_CITY_CODE\" = " + parentCityCode
         );
         condition.setOrderByClause("\"CITY_CODE\" asc");
         List<Stationcity> list = stationcityService.findByCondition(condition);

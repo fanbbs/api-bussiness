@@ -71,8 +71,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     //统一异常处理
     @Override
     public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
-        exceptionResolvers.add(new HandlerExceptionResolver() {
-            public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception e) {
+        exceptionResolvers.add( (request,  response,  handler,  e) -> {
                 Result result = new Result();
                 if (e instanceof ServiceException) {//业务失败的异常，如“账号或密码错误”
                     result.setCode(ResultCode.FAIL).setMessage(e.getMessage());
@@ -100,13 +99,13 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
                 return new ModelAndView();
             }
 
-        });
+        );
     }
 
     //解决跨域问题
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        //registry.addMapping("/**");
+        // Do nothing
     }
 
     //添加拦截器
@@ -157,7 +156,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
         if (StringUtils.isEmpty(requestSign)) {
             return false;
         }
-        List<String> keys = new ArrayList<String>(request.getParameterMap().keySet());
+        List<String> keys = new ArrayList<>(request.getParameterMap().keySet());
         keys.remove("sign");//排除sign参数
         Collections.sort(keys);//排序
 
@@ -174,26 +173,27 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
         return StringUtils.equals(sign, requestSign);//比较
     }
 
+    private static final String UNKNOWN = "unknown";
     private String getIpAddress(HttpServletRequest request) {
         String ip = request.getHeader("x-forwarded-for");
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("Proxy-Client-IP");
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("WL-Proxy-Client-IP");
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("HTTP_CLIENT_IP");
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("HTTP_X_FORWARDED_FOR");
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getRemoteAddr();
         }
         // 如果是多级代理，那么取第一个ip为客户端ip
-        if (ip != null && ip.indexOf(",") != -1) {
-            ip = ip.substring(0, ip.indexOf(",")).trim();
+        if (ip != null && ip.indexOf(',') != -1) {
+            ip = ip.substring(0, ip.indexOf(',')).trim();
         }
 
         return ip;

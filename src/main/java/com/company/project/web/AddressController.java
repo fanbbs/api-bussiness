@@ -10,6 +10,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
@@ -31,6 +33,7 @@ import org.gds.offset.CoordOffset;
 @Api(tags = "标准地址维护，查询")
 
 public class AddressController {
+    private final Logger logger = LoggerFactory.getLogger(AddressController.class);
     @Resource
     private AddressService addressService;
 
@@ -151,9 +154,7 @@ public class AddressController {
     @ApiIgnore
     private Map jiupianSingle(double x, double y) {
         try {
-            if (isOSLinux()) {
-//                packFile = "/root/locallib/packfile.dat";
-            }else {
+            if (!isOSLinux()) {
                 packFile = "D:\\app\\app\\locallib\\packfile.dat";
                 packFile = packFile.replace("\\\\", "/");
             }
@@ -168,7 +169,7 @@ public class AddressController {
 
             return mapResult;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
             return null;
         }
     }
@@ -177,11 +178,13 @@ public class AddressController {
         Properties prop = System.getProperties();
 
         String os = prop.getProperty("os.name");
+        boolean isLinux = false;
         if (os != null && os.toLowerCase().indexOf("linux") > -1) {
-            return true;
+            isLinux = true;
         } else {
-            return false;
+            isLinux = false;
         }
+        return  isLinux;
     }
 
     @ApiIgnore

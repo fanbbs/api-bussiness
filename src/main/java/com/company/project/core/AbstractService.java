@@ -1,7 +1,5 @@
 package com.company.project.core;
 
-
-import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Condition;
 
@@ -49,7 +47,7 @@ public abstract class AbstractService<T> implements Service<T> {
     }
 
     @Override
-    public T findBy(String fieldName, Object value) throws TooManyResultsException {
+    public T findBy(String fieldName, Object value) {
         try {
             T model = modelClass.newInstance();
             Field field = modelClass.getDeclaredField(fieldName);

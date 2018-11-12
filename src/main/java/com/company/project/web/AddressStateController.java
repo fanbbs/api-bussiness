@@ -2,7 +2,6 @@ package com.company.project.web;
 
 import com.company.project.core.Result;
 import com.company.project.core.ResultGenerator;
-import com.company.project.model.Address;
 import com.company.project.model.AddressState;
 import com.company.project.service.AddressStateService;
 import com.github.pagehelper.PageHelper;
